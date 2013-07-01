@@ -1,0 +1,58 @@
+body {
+    width: 1000px;
+    margin: auto;
+    background: #222633;
+    font: 300 100.1% "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif;
+}
+
+.dp{
+    width: 48px;
+    height: 48px;
+    float: left;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.tweet{
+    float: right;
+}
+#roll{
+    height:360px;
+    overflow: hidden;
+}
+
+#hash li{
+    background-color: #3498DB;
+    color: #ECF0F1;
+    height: 30px;
+    margin-top: 2px;
+    padding-top: 7px;
+    padding-left: 10px;
+    list-style: none;
+}
+
+#tweeText li{   
+    background-color: #FFF; 
+    color: #E74C3C;
+    height: 50px;
+    margin-top: 2px;
+    padding-top: 7px;
+    padding-left: 10px;
+    list-style: none;
+}
+
+#holder {
+    margin: -350px 0 0 -350px;
+    width: 700px;
+    height: 700px;
+}
+#copy {
+    bottom: 0;
+    font: 300 .7em "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif;
+    position: absolute;
+    right: 1em;
+    text-align: right;
+}
+#copy a {
+    color: #fff;
+}
