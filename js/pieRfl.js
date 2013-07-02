@@ -1,8 +1,9 @@
 var values = [];
-var labels = {legend: ['NA', 'SA', 'EU', 'AF', 'Asia', 'AU']};
+var labels = {legend: ['North America', 'South America', 'Europe', 'Africa', 'Asia', 'Australia'], stroke: "#FFF", strokewidth: 2, colors: ['#91062B','#DE3535','#FF615C','#FF854A','#FFC25C','#8C4646']};
 var countNA=0 , countSA=0, countEU=0, countAF=0, countAsia=0, countAU=0;
 var pieHolder = Raphael("holder"),
     pie = pieHolder.piechart(175, 130, 100, values, labels);
+
 function getPieValues(x,y){                    
   if((0<=x)&&(x<=405.0) && (0<=y)&&(y<=195.0))
       countNA++;
@@ -18,3 +19,4 @@ function getPieValues(x,y){
       countAsia++;
   return [countNA, countSA, countEU, countAF, countAsia, countAU];
 }
+

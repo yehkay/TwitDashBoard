@@ -1,12 +1,67 @@
-body {
-    width: 1000px;
-    margin: auto;
-    background: #222633;
-    font: 300 100.1% "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif;
+body{
+    background-color: #E0E0E0;
 }
 
 .container{
     width: 1000px;
+}
+
+#top{
+    width: 100%;
+    background-color: #3EA6E1;
+    height: 45px;
+    position: absolute;
+    z-index: -5;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #225C7D;
+}
+
+#head{
+    height: 50px;
+    margin-bottom: 25px;
+}
+
+#logo{
+    font-family: 'Josefin Slab', serif;
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: none;
+    margin-top: 0;
+    float: left;
+}
+.menu{
+    float: right;    
+    font-size: 15px;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 700;
+    margin-top: 15px;
+}
+#dynamic{
+    color: white;
+}
+
+#static a
+{ 
+    text-decoration: none !important;    
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 25px;
+    color: #225C7D;
+    border-color: #225C7D;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-width: 2px;
+    border-style: solid;
+}
+
+#static a:hover{
+    background-color: #225C7D;
+    color: white;
 }
 
 .dp{
@@ -46,11 +101,80 @@ body {
 }
 
 #dash{
-
+    background-color: #EEE;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 #holder {
-    width: 350px;
+    width: 600px;
     height: 260px;
     float: left;
+}
+
+#counter{
+    width: 400px;
+    height: 260px;
+    float: right;
+    
+}
+
+#counter ul{
+    list-style: none;
+    margin-right: 3px;
+}
+
+#counter ul li{
+    font-family: 'Josefin Slab', serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 3px;
+    background-color: white;
+    padding-left: 25px;    
+    padding-bottom: 10px;
+    height: 30px;
+}
+.count{
+    float: left;
+    padding-top: 10px;
+}
+
+.label{
+    float: right;
+}
+
+#NAli{
+    border-left-style: solid;
+    border-left-width: 7px;
+    border-left-color: #91062B;
+}
+
+#SAli{
+    border-left-style: solid;
+    border-left-width: 7px;
+    border-left-color: #FF615C;
+}
+
+#EUli{
+    border-left-style: solid;
+    border-left-width: 7px;
+    border-left-color: #DE3535;
+}
+
+#AFli{
+    border-left-style: solid;
+    border-left-width: 7px;
+    border-left-color: #FFC25C;
+}
+
+#Asiali{
+    border-left-style: solid;
+    border-left-width: 7px;
+    border-left-color: #FF854A;
+}
+
+#AUli{
+    border-left-style: solid;
+    border-left-width: 7px;
+    border-left-color: #8C4646;
 }

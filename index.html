@@ -2,17 +2,54 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Socket.IO Twitter Example</title>    
+    <title>Socket.IO Twitter Example</title> 
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:400,700' rel='stylesheet' type='text/css'>   
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/demo.css" media="screen">
+
   </head>
 
   <body>
+    <div id="top"></div>
     <div class="container">
-      <a href="/globe/index.html">Globe</a>
+      <div id='head'>
+        <h2 id="logo" href='#'>TwitDashBoard</h2>
+        <h4 class='menu' id="static"><a  href="/globe/index.html">RECORDED</a></h4>
+        <h4 class="menu" id="dynamic">REAL-TIME</h4>
+               
+      </div>
+      
       <div id="map"></div>
       <div class="row" id="dash">
-        <div id="holder"></div>        
+        <div id="holder"></div>
+        <div id="counter">
+          <ul>
+            <li id="NAli">
+              <div id="NA" class="count"></div>
+              <div class="label">NORTH AMERICA</div>
+            </li>
+            <li id="EUli">
+              <div id="EU" class="count"></div>
+              <div class="label">EUROPE</div>
+            </li>
+            <li id="SAli">
+              <div id="SA" class="count"></div>
+              <div class="label">SOUTH AMERICA</div>
+            </li>
+            <li  id="Asiali">
+              <div id="Asia" class="count"></div>
+              <div class="label">ASIA</div>
+            </li>            
+            <li id="AFli">
+              <div id="AF" class="count"></div>
+              <div class="label">AFRICA</div>
+            </li>            
+            <li  id="AUli">
+              <div id="AU" class="count"></div>
+              <div class="label">AUSTRALIA</div>
+            </li>
+          </ul>
+        </div>        
       </div>
       <div class="row" id="roll">
         <ul class="tweets span9" id="tweeText"></ul>
