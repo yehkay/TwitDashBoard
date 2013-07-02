@@ -31,16 +31,15 @@ twit.stream('statuses/filter', {'locations':'-180,-90,180,90'}, function(stream)
    
     
     if(data.geo != null){
-      console.log(tag);
-        io.sockets.volatile.emit('tweet', {
-          user: data.user.screen_name,
-          dp: data.user.profile_image_url,
-          text: data.text,
-          lat: data.geo.coordinates[0],
-          lon: data.geo.coordinates[1],
-          hashtag: tag    
-        });
-      }
+      io.sockets.volatile.emit('tweet', {
+        user: data.user.screen_name,
+        dp: data.user.profile_image_url,
+        text: data.text,
+        lat: data.geo.coordinates[0],
+        lon: data.geo.coordinates[1],
+        hashtag: tag    
+      });
+    }
 
 
 	});
