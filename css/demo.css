@@ -29,6 +29,7 @@ body{
     text-decoration: none;
     margin-top: 0;
     float: left;
+    margin-top: 5px;
 }
 .menu{
     float: right;    
@@ -70,14 +71,21 @@ body{
     float: left;
     border-radius: 24px;
     overflow: hidden;
+    margin-left: 0;
 }
 
 .tweet{
     float: right;
+    margin-left: 0;
 }
 #roll{
-    height:360px;
+    width: 1000px;
+    height:236px;
+    background-color: #EEE;
+    border-radius: 5px;
+    margin-bottom: 60px;
     overflow: hidden;
+    margin-left: 0;
 }
 
 #hash li{
@@ -88,22 +96,42 @@ body{
     padding-top: 7px;
     padding-left: 10px;
     list-style: none;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 #tweeText li{   
     background-color: #FFF; 
-    color: #E74C3C;
+    color: #3498DB;
     height: 50px;
     margin-top: 2px;
     padding-top: 7px;
     padding-left: 10px;
-    list-style: none;
+    list-style: none;   
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: italic;
+    font-size: 16px;
+}
+
+#tweeText{
+    width: 700px;
+    margin-left: 0;
+    float: left;
+}
+
+#hash{
+    width: 280px;
+    margin-left: 20px;
+    float: right;
 }
 
 #dash{
     background-color: #EEE;
     border-radius: 5px;
     margin-bottom: 20px;
+    margin-left: 0;
+    width: 1000px;
 }
 
 #holder {
@@ -146,35 +174,47 @@ body{
 #NAli{
     border-left-style: solid;
     border-left-width: 7px;
-    border-left-color: #91062B;
+    border-left-color: #8C4646;
 }
 
 #SAli{
     border-left-style: solid;
     border-left-width: 7px;
-    border-left-color: #FF615C;
+    border-left-color: #D96459;
 }
 
 #EUli{
     border-left-style: solid;
     border-left-width: 7px;
-    border-left-color: #DE3535;
+    border-left-color: #F2AE72;
 }
 
 #AFli{
     border-left-style: solid;
     border-left-width: 7px;
-    border-left-color: #FFC25C;
+    border-left-color: #F2E394;
 }
 
 #Asiali{
     border-left-style: solid;
     border-left-width: 7px;
-    border-left-color: #FF854A;
+    border-left-color: #588C7E;
 }
 
 #AUli{
     border-left-style: solid;
     border-left-width: 7px;
-    border-left-color: #8C4646;
+    border-left-color: #2B453E;
+}
+
+hr{
+    clear: both;
+    margin-bottom: 25px;
+    border: 0;
+    border-top: 1px solid #b6b8b7;
+    border-bottom: 1px solid #fff;
+}
+
+.row{
+    margin-left: 0;
 }

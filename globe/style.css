@@ -1,0 +1,132 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #000000 url(loading.gif) center center no-repeat;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  height: 100%;
+}
+
+#top{
+    width: 100%;
+    background-color: #3EA6E1;
+    height: 45px;
+    position: absolute;
+    z-index: -5;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #225C7D;
+}
+
+#head{
+  position: absolute;
+  height: 50px; 
+  width: 100%; 
+}
+
+#logo{
+    font-family: 'Josefin Slab', serif;
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: none;
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.menu{   
+    font-size: 15px;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 700;    
+    top: -5px;  
+    float: right;  
+    margin-top: 12px;
+}
+#static{
+    color: white;
+    margin-right: 30px;
+
+}
+
+#dynamic{
+  margin-right: 20px;
+}
+
+#dynamic a
+{ 
+    text-decoration: none !important;    
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 25px;
+    color: #225C7D;
+    border-color: #225C7D;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-width: 2px;
+    border-style: solid;        
+}
+
+#dynamic a:hover{
+    background-color: #225C7D;
+    color: white;
+}
+
+.bull {
+  padding: 0 5px;
+  color: #555;
+}
+
+#title {
+  position: absolute;
+  top: 70px;
+  width: 270px;
+  left: 20px;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+  font: 20px Georgia;
+  padding: 10px;
+}
+
+#graph {
+  position: absolute;
+  left: -40px;
+  bottom: 10px;
+  height: 350px;
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.10);         
+}
+
+#graphhead{
+  height: 50px;
+  background-color: rgba(62, 127, 225, 0.76)  ;
+}
+
+#graphtext{
+  width: 300px;
+  margin-left: 50px;
+  font-family: 'Josefin Slab', serif;
+  font-size: 25px;
+  padding-top: 10px;
+  float: left;
+}
+
+#graphBtn{
+  float: right;
+}
+
+.active{
+
+}
+
+#holder{
+  
+  padding: 20px; 
+}

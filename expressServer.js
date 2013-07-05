@@ -16,14 +16,54 @@ var twit = new twitter({
   access_token_secret: 'VzjQf5muAlXQPzuIsRFdKm6cWqpXPBPHp5N0uv7ZXFE'
 });
 
+var  latlong = [['tweets', [ ]]];
+var latlongdata = [['tweets', [ ]]];
+var temp = [];
+var countMin = [];
+var countMinData = [];
+var countdata = [];
 var count = 0;
+var count15 = 0;
 
-console.log("count started :" + count);
-setInterval(function(){console.log('Tweet Count: '+ count);},15000);
+//record count every 1 minute
+setInterval(function(){
+  countMin = countMin.concat(count);
+  console.log(countMin);
+
+},60000);
+
+//store the geo values in the variable 'latlongdata' and restart 'count' every 15 mins
+setInterval(function(){
+  latlongdata = latlong;
+  countMinData = countMin;
+  count15 = count;
+  countdata = tweetcountmin();
+
+  latlong = [['tweets', [ ]]];
+  count = 0;
+  countMin = [];
+
+  console.log('ll: ' + latlongdata[0][1].length); 
+  console.log('countdata: '+countdata);
+},900000);
+
+function tweetcountmin(){
+  var tempcount = [];
+  for(var i = 0; i<14; i++){
+    if(i == 0)
+      tempcount[i] = countMinData[0];
+    else
+      tempcount[i] = countMinData[i] - countMinData[i-1];
+  }
+  console.log('count15: ' + count15);
+  console.log('temp13: ' + tempcount[13]);
+  tempcount[14] = count15 - countMinData[13];
+  return tempcount; 
+}
 
 twit.stream('statuses/filter', {'locations':'-180,-90,180,90'}, function(stream) {
-  stream.on('data', function (data) {
-    count ++;
+  stream.on('data', function (data) { 
+    count++;   
     if(data.entities.hashtags[0] != null || data.entities.hashtags[0] != undefined ) 
       var tag = data.entities.hashtags[0].text;
     else
@@ -39,6 +79,10 @@ twit.stream('statuses/filter', {'locations':'-180,-90,180,90'}, function(stream)
         lon: data.geo.coordinates[1],
         hashtag: tag    
       });
+
+      temp = [ data.geo.coordinates[0], data.geo.coordinates[1], 1 ]
+      latlong[0][1] = latlong[0][1].concat(temp);  
+      count++;    
     }
 
 
@@ -49,6 +93,13 @@ twit.stream('statuses/filter', {'locations':'-180,-90,180,90'}, function(stream)
 //Routers
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
+});
+
+app.get('/getlatlong',function (req, res) {
+  if(latlongdata[0][1].length !=0)
+    res.json(latlongdata);
+  else
+    res.json(latlong);
 });
 
 app.get('/js/:pname', function (req, res) {  
