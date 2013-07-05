@@ -99,8 +99,8 @@ body {
   position: absolute;
   left: -40px;
   bottom: 10px;
-  height: 350px;
-  width: 550px;
+  height: 357px;
+  width: 500px;
   background-color: rgba(255, 255, 255, 0.10);         
 }
 
@@ -109,24 +109,83 @@ body {
   background-color: rgba(62, 127, 225, 0.76)  ;
 }
 
-#graphtext{
-  width: 300px;
-  margin-left: 50px;
+#graphtext{ 
+  margin-right: 30px;
   font-family: 'Josefin Slab', serif;
   font-size: 25px;
-  padding-top: 10px;
-  float: left;
-}
-
-#graphBtn{
+  padding-top: 15px;
   float: right;
 }
 
-.active{
-
+#graphBtn{
+  content: 'X';
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  font-size: 15px;    
+  background-color: rgba(62, 127, 225, 0.76);
+  padding-top: 5px;
+  border: 2px solid white;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
-#holder{
-  
-  padding: 20px; 
+#holder{  
+  padding-top: 20px; 
+}
+
+#info{
+  margin-left: 60px;
+  font-family: 'Josefin Slab', serif;
+  font-size: 20px;
+  color: rgb(53, 169, 224);
+  margin-top: 10px;
+}
+
+#details {
+  position: absolute;
+  right: 0;
+  bottom: 10px;  
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.10);         
+}
+
+#dhead{
+  height: 50px;
+  background-color: rgba(62, 127, 225, 0.76)  ;
+}
+
+#dtext{ 
+  margin-left: 20px;
+  font-family: 'Josefin Slab', serif;
+  font-size: 25px;
+  padding-top: 15px;
+  float: left;
+}
+
+#dBtn{
+  content: 'X';
+  position: absolute;
+  bottom: 17px;
+  right: 10px;
+  font-size: 15px;    
+  background-color: rgba(62, 127, 225, 0.76);
+  padding-top: 5px;
+  border: 2px solid white;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#text{
+  margin-left: 60px;
+  font-family: 'Josefin Slab', serif;
+  font-size: 17px;
+  color: rgb(53, 169, 224);
+  margin-top: 10px;  
 }

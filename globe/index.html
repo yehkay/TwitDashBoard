@@ -17,17 +17,26 @@
   </div>
       
   <div id="graph">
-    <div id="graphhead">
-      <div id="graphtext">Tweets per minute</div>
-      <div id="graphBtn">X</div>
-    </div>
+    <div id="info">Number of tweets: <span id="tweetCount"></span></div>
     <div id="holder"></div>
+    <div id="graphhead">
+      <div id="graphtext">Tweets per minute</div>      
+    </div>
   </div>
-  <div id="title">
-    Tweets recorded in a 15min interval
-  </div>
+  <div id="graphBtn">&#926;</div>
 
-  
+  <div id="details">
+    <div id="text">
+      <p>Tweets are recorded and plotted on the webGL Globe<br/><br/>
+        Data refreshes every 15mins<br/><br/>
+        Scroll-up to Zoom-in to the globe<br/><br/>
+        Hover over the graph for more details</p>
+    </div>   
+    <div id="dhead">
+      <div id="dtext">Info</div>      
+    </div>
+  </div>
+  <div id="dBtn">&#926;</div>
 
   <script type="text/javascript" src="third-party/Three/ThreeWebGL.js"></script>
   <script type="text/javascript" src="third-party/Three/ThreeExtras.js"></script>
@@ -46,21 +55,32 @@
     $( document ).ready(function() {
 
       $.get( "/../getlatlong", success, "json" );
+      $.get( "/../getgraphdata", gsuccess, "json" );
       drawGridRfl();
-      drawGraph();
+      
 
-      $("#graphBtn").click(function(){
-        console.log('Btn click');
-        $("#graph").toggle("fast");
-        $(this).toggleClass("active");
+      $("#graphBtn").click(function(){        
+        $("#graph").toggle("slow");
+        return false;
+      });
+      $("#dBtn").click(function(){        
+        $("#details").toggle("slow");
         return false;
       });
     });
 
     function success( dat ) {
       data = dat;  
-      console.log("length " + data[0][1].length);
       drawGlobe();
+    }
+
+    function gsuccess(graph) {
+      var labels = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+        data = graph.data;   
+      console.log("data:### " + data);
+      drawGraph(labels, data);
+
+      $('#tweetCount').html(graph.count);
     }
 
     function drawGlobe(){

@@ -21,7 +21,7 @@ var latlongdata = [['tweets', [ ]]];
 var temp = [];
 var countMin = [];
 var countMinData = [];
-var countdata = [];
+var countdata = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2];
 var count = 0;
 var count15 = 0;
 
@@ -55,8 +55,6 @@ function tweetcountmin(){
     else
       tempcount[i] = countMinData[i] - countMinData[i-1];
   }
-  console.log('count15: ' + count15);
-  console.log('temp13: ' + tempcount[13]);
   tempcount[14] = count15 - countMinData[13];
   return tempcount; 
 }
@@ -101,6 +99,12 @@ app.get('/getlatlong',function (req, res) {
   else
     res.json(latlong);
 });
+
+app.get('/getgraphdata',function (req, res) {
+  var graph = {data: countdata, count: count15 };
+  res.json(graph);
+});
+
 
 app.get('/js/:pname', function (req, res) {  
   var pname = req.params.pname;

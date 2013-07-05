@@ -15,7 +15,7 @@ function drawGridRfl(){
 }
 
 
-function drawGraph(){
+function drawGraph(l,d){
 	function getAnchors(p1x, p1y, p2x, p2y, p3x, p3y) {
         var l1 = (p2x - p1x) / 2,
             l2 = (p3x - p2x) / 2,
@@ -36,8 +36,8 @@ function drawGraph(){
         };
     }
     // Grab the data
-    var labels = [1,2,3,4,5,6,7],
-        data = [15,23,12,45,125,23,34];    
+       var labels = l,
+            data = d;
     
     // Draw
     var width = 500,
