@@ -55,7 +55,13 @@ function tweetcountmin(){
     else
       tempcount[i] = countMinData[i] - countMinData[i-1];
   }
-  tempcount[14] = count15 - countMinData[13];
+  if(countMinData[14] != 0 && countMinData[14] != null && countMinData[14] != undefined){
+    tempcount[14] = countMinData[14] - countMinData[13];
+  }
+  else{
+    tempcount[14] = count15 - countMinData[13];
+  }
+  
   return tempcount; 
 }
 
