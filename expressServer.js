@@ -1,11 +1,15 @@
 var express = require('express'),
-	twitter = require('ntwitter'),
-	app = express(),
-	http = require('http'),
-	server = http.createServer(app),
-  io = require('socket.io').listen(server); 
+  twitter = require('ntwitter'),
+  app = express(),
+  http = require('http'),
+  server = http.createServer(app),
+  io = require('socket.io').listen(server);
+
+var port = process.env.PORT || 3000; 
   
-server.listen(3000);
+server.listen(port, function() {
+  console.log("Listening on " + port);
+});
 
 
 //twitter authorizations
@@ -90,7 +94,7 @@ twit.stream('statuses/filter', {'locations':'-180,-90,180,90'}, function(stream)
     }
 
 
-	});
+  });
 });
 
 
