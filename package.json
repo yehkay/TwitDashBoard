@@ -6,5 +6,8 @@
     "express":"latest",
     "ntwitter":"latest",
     "socket.io":"latest"
+  },
+  "scripts":{
+    "start": "node expressServer.js"
   }
 }

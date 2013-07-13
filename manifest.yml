@@ -1,0 +1,16 @@
+---
+applications:
+  .:
+    name: tweetdash
+    framework:
+      name: standalone
+      info:
+        mem: 64M
+        description: Standalone Application
+        exec: 
+    runtime: node08
+    command: node expressServer.js
+    infra: aws
+    url: tweetdash.aws.af.cm
+    mem: 1G
+    instances: 1

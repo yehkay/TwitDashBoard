@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <title>WebGL Globe</title>
+    <title>Global Tweets</title>
     <meta charset="utf-8">
     <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:400,700' rel='stylesheet' type='text/css'>   
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400italic' rel='stylesheet' type='text/css'>
@@ -17,7 +17,7 @@
   </div>
       
   <div id="graph">
-    <div id="info">Number of tweets: <span id="tweetCount"></span></div>
+    <div id="info"><span id="tweetCount"></span> <span class='infoc'>tweets</span> in the last <span id="mins"></span> <span class='infoc'>minutes</span></div>
     <div id="holder"></div>
     <div id="graphhead">
       <div id="graphtext">Tweets per minute</div>      
@@ -28,7 +28,7 @@
   <div id="details">
     <div id="text">
       <p>Tweets are recorded and plotted on the webGL Globe<br/><br/>
-        Data refreshes every 15mins<br/><br/>
+        Refresh Page to see updated data<br/><br/>
         Scroll-up to Zoom-in to the globe<br/><br/>
         Hover over the graph for more details</p>
     </div>   
@@ -74,13 +74,14 @@
       drawGlobe();
     }
 
-    function gsuccess(graph) {
-      var labels = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+    function gsuccess(graph) {      
+      var labels = [1,2,3,4,5,6,7,8,9,10],
         data = graph.data;   
       console.log("data:### " + data);
       drawGraph(labels, data);
 
       $('#tweetCount').html(graph.count);
+      $('#mins').html(graph.time);
     }
 
     function drawGlobe(){

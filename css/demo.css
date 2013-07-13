@@ -218,3 +218,43 @@ hr{
 .row{
     margin-left: 0;
 }
+
+footer{
+   
+}
+
+#footwi{
+    width: 500px;
+    float: right;
+}
+
+#fooname{
+    width: 500px;
+    float: left;
+}
+
+#footwi h6{
+    text-align: right;
+}
+
+.fooinfo{
+    margin-bottom: 15px;
+}
+
+.fooinfo>h6{
+    color: gray;
+}
+
+.fooinfo>h6>a{
+    color: #DE3535;
+}
+
+
+.fooinfo>h6>a:hover{
+    color: white;
+    text-decoration: none;
+    background-color: #DE3535;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+}

@@ -20,58 +20,53 @@ var twit = new twitter({
   access_token_secret: 'VzjQf5muAlXQPzuIsRFdKm6cWqpXPBPHp5N0uv7ZXFE'
 });
 
-var  latlong = [['tweets', [ ]]];
+var latlong = [['tweets', [ ]]];
 var latlongdata = [['tweets', [ ]]];
 var temp = [];
-var countMin = [];
-var countMinData = [];
-var countdata = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2];
+
+var timeC = 0;
+var countdata = [0,0,0,0,0,0,0,0,0,0];
 var count = 0;
+
+var countMin = [];
+var countMinData = [0,0,0,0,0,0,0,0,0,0];
+
 var count15 = 0;
 
 //record count every 1 minute
 setInterval(function(){
-  countMin = countMin.concat(count);
-  console.log(countMin);
-
+  //countMin = countMin.concat(count);
+  countMinData[timeC] = count;
+  tweetcountmin();
+  timeC++;  
 },60000);
 
 //store the geo values in the variable 'latlongdata' and restart 'count' every 15 mins
 setInterval(function(){
   latlongdata = latlong;
-  countMinData = countMin;
-  count15 = count;
-  countdata = tweetcountmin();
-
   latlong = [['tweets', [ ]]];
+
+ /* countMinData = countMin;
+  count15 = count;
+  countdata = tweetcountmin();  
   count = 0;
-  countMin = [];
-
-  console.log('ll: ' + latlongdata[0][1].length); 
-  console.log('countdata: '+countdata);
-},900000);
-
-function tweetcountmin(){
-  var tempcount = [];
-  for(var i = 0; i<14; i++){
-    if(i == 0)
-      tempcount[i] = countMinData[0];
-    else
-      tempcount[i] = countMinData[i] - countMinData[i-1];
-  }
-  if(countMinData[14] != 0 && countMinData[14] != null && countMinData[14] != undefined){
-    tempcount[14] = countMinData[14] - countMinData[13];
-  }
-  else{
-    tempcount[14] = count15 - countMinData[13];
-  }
+  countMin = []; */
   
-  return tempcount; 
-}
+  countMinData = [0,0,0,0,0,0,0,0,0,0];
+  countdata = [0,0,0,0,0,0,0,0,0,0];
+  count = 0;
+  timeC = 0;
+},600000);
+
+function tweetcountmin(){  
+  if(timeC == 0)
+    countdata[0] = count;
+  else
+    countdata[timeC] = countMinData[timeC] - countMinData[timeC-1];   
+}  
 
 twit.stream('statuses/filter', {'locations':'-180,-90,180,90'}, function(stream) {
-  stream.on('data', function (data) { 
-    count++;   
+  stream.on('data', function (data) {        
     if(data.entities.hashtags[0] != null || data.entities.hashtags[0] != undefined ) 
       var tag = data.entities.hashtags[0].text;
     else
@@ -79,6 +74,7 @@ twit.stream('statuses/filter', {'locations':'-180,-90,180,90'}, function(stream)
    
     
     if(data.geo != null){
+      count++;
       io.sockets.volatile.emit('tweet', {
         user: data.user.screen_name,
         dp: data.user.profile_image_url,
@@ -89,8 +85,7 @@ twit.stream('statuses/filter', {'locations':'-180,-90,180,90'}, function(stream)
       });
 
       temp = [ data.geo.coordinates[0], data.geo.coordinates[1], 1 ]
-      latlong[0][1] = latlong[0][1].concat(temp);  
-      count++;    
+      latlong[0][1] = latlong[0][1].concat(temp);            
     }
 
 
@@ -111,7 +106,12 @@ app.get('/getlatlong',function (req, res) {
 });
 
 app.get('/getgraphdata',function (req, res) {
-  var graph = {data: countdata, count: count15 };
+  if(timeC == 0)
+    countdata[0] = count;
+  else
+    countdata[timeC] = count - countMinData[timeC-1];
+  var graph = {data: countdata, count: count, time: timeC };
+  console.log('Graph values: ' + graph);
   res.json(graph);
 });
 

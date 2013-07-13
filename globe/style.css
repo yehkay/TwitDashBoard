@@ -189,3 +189,15 @@ body {
   color: rgb(53, 169, 224);
   margin-top: 10px;  
 }
+
+#tweetCount{
+  color: rgb(231, 231, 250);
+}
+
+#mins{
+  color: rgb(231, 231, 250);
+}
+
+.infoc{
+   color: rgb(231, 231, 250);
+}
