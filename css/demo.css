@@ -174,37 +174,37 @@ body{
 #NAli{
     border-left-style: solid;
     border-left-width: 7px;
-    border-left-color: #8C4646;
+    border-left-color: #91062B;
 }
 
 #SAli{
     border-left-style: solid;
     border-left-width: 7px;
-    border-left-color: #D96459;
+    border-left-color: #FF615C;
 }
 
 #EUli{
     border-left-style: solid;
     border-left-width: 7px;
-    border-left-color: #F2AE72;
+    border-left-color: #DE3535;
 }
 
 #AFli{
     border-left-style: solid;
     border-left-width: 7px;
-    border-left-color: #F2E394;
+    border-left-color: #FFC25C;
 }
 
 #Asiali{
     border-left-style: solid;
     border-left-width: 7px;
-    border-left-color: #588C7E;
+    border-left-color: #FF854A;
 }
 
 #AUli{
     border-left-style: solid;
     border-left-width: 7px;
-    border-left-color: #2B453E;
+    border-left-color: #8C4646;
 }
 
 hr{
@@ -257,4 +257,15 @@ footer{
     padding-left: 5px;
     padding-right: 5px;
     
+}
+
+.twitter-share-button{
+    margin-left: 420px;
+}
+
+#loader{
+    position: absolute;
+    top: 240px;
+    padding-left: 500px;
+    width: 20px;
 }
